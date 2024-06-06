@@ -14,9 +14,10 @@ public class Simple_calculator extends javax.swing.JFrame {
     /**
      * Creates new form Simple_calculator
      */
+    
     public Simple_calculator() {
         initComponents();
-  
+     
 
     }
 
@@ -50,10 +51,10 @@ public class Simple_calculator extends javax.swing.JFrame {
         mult = new javax.swing.JButton();
         sub = new javax.swing.JButton();
         add = new javax.swing.JButton();
-        equl = new javax.swing.JButton();
         input = new javax.swing.JTextField();
         on = new javax.swing.JRadioButton();
         off = new javax.swing.JRadioButton();
+        equal = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -120,14 +121,6 @@ public class Simple_calculator extends javax.swing.JFrame {
         add.setText("+");
         add.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153)));
 
-        equl.setText("=");
-        equl.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153)));
-        equl.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                equlActionPerformed(evt);
-            }
-        });
-
         input.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputActionPerformed(evt);
@@ -138,6 +131,13 @@ public class Simple_calculator extends javax.swing.JFrame {
 
         off.setText("OFF");
 
+        equal.setText("=");
+        equal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                equalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,7 +145,9 @@ public class Simple_calculator extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(input)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(input)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -190,17 +192,16 @@ public class Simple_calculator extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(on)
                                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(equl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(off))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(off)
+                            .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 8, Short.MAX_VALUE))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(126, 126, 126)
                     .addComponent(modulo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(128, Short.MAX_VALUE)))
+                    .addContainerGap(152, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -212,7 +213,7 @@ public class Simple_calculator extends javax.swing.JFrame {
                     .addComponent(on)
                     .addComponent(off))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Cancel)
@@ -242,7 +243,7 @@ public class Simple_calculator extends javax.swing.JFrame {
                             .addComponent(zero)
                             .addComponent(dot)
                             .addComponent(add)))
-                    .addComponent(equl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(equal, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -256,11 +257,12 @@ public class Simple_calculator extends javax.swing.JFrame {
 
     private void inputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_inputActionPerformed
 
-    private void equlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equlActionPerformed
+    private void equalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_equalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_equlActionPerformed
+    }//GEN-LAST:event_equalActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,7 +306,7 @@ public class Simple_calculator extends javax.swing.JFrame {
     private javax.swing.JButton div;
     private javax.swing.JButton dot;
     private javax.swing.JButton eight;
-    private javax.swing.JButton equl;
+    private javax.swing.JButton equal;
     private javax.swing.JButton five;
     private javax.swing.JButton four;
     private javax.swing.JTextField input;
