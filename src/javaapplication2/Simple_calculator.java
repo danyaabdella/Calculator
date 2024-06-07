@@ -6,7 +6,7 @@ import java.awt.event.*;
 public class Simple_calculator extends javax.swing.JFrame {
     String a;
     double num1,num2,result;
-    String operator;
+    String operator = "";
     
     public Simple_calculator() {
         initComponents(); 
@@ -371,6 +371,7 @@ public class Simple_calculator extends javax.swing.JFrame {
             default:
                 result=0;
         }
+        operator = "";
         input.setText(Double.toString(result));
     }//GEN-LAST:event_equalActionPerformed
 
@@ -474,6 +475,10 @@ public class Simple_calculator extends javax.swing.JFrame {
         {
             input.setText(input.getText()+"6");
         }
+        
+        if (num1 != 0.0) {
+            equalActionPerformed(evt);
+        }
     }//GEN-LAST:event_sixActionPerformed
 
     private void sevenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sevenActionPerformed
@@ -567,9 +572,15 @@ public class Simple_calculator extends javax.swing.JFrame {
         // TODO add your handling code here:
        if(evt.getKeyChar()>='0'&& evt.getKeyChar()<='9' ||evt.getKeyChar()==KeyEvent.VK_BACK_SPACE||evt.getKeyChar()==KeyEvent.VK_PERIOD)
            {
-               input.setEditable(true);
+               if (input.getText().contains(".")) {
+                   if (evt.getKeyChar() == '.') {
+                       input.setEditable(false);
+                   }
+               }
+               else {
+                   input.setEditable(true);
+               }   
            }
-       
        else{
                input.setEditable(false);
            }
